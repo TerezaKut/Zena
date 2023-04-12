@@ -156,6 +156,12 @@ h4 {
     margin-bottom:5px;
 }
 
+h5 {
+    font-size:25px;
+    font-weight: 600;
+    margin-bottom:5px;
+}
+
 .navigace {
     color: #618D02;
     font-weight: 400;
@@ -232,7 +238,7 @@ h4 {
     position: absolute;
     width: 250px;
     height: 198px;
-    left: 7%;
+    left: 8%;
     top: 15%;
 
     font-style: italic;
@@ -454,6 +460,21 @@ section {
 
 }
 
+.reference_karta_max {
+    display:flex;
+    /* border: 3px solid orange; */
+
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin:10px;
+    padding:15px;
+    width:95%;
+    border-radius: 10px;
+
+    background-color:white;
+
+}
+
 .reference_tlacitko {
     padding: 20px;
 }
@@ -572,11 +593,11 @@ section {
 }
 
 .cd2-zadek {
-    background-image: url("pic/CD2-zadek.png");
+    background-image: url("pic/CD2-zadek.jpg");
 }
 
 .cd2-predek:hover {
-    background-image: url("pic/CD2-zadek.png");
+    background-image: url("pic/CD2-zadek.jpg");
 
 }
 
@@ -651,8 +672,9 @@ section {
 
 .blog-kurziva {
     /* font-style:italic; */
-    color:#89C013;
-    font-weight:bolder;
+    color:#B10D3E;
+    font-style: italic;
+    font-weight:600;
 }
 
 .obr1 {
@@ -743,6 +765,13 @@ section {
     padding-right:20px;
             /* border: 3px solid orange; */
 
+}
+
+.blog-obr-text {
+    width: 400px;
+    height:400px;
+    float:right;
+    margin:0 3% 3% 3%;
 }
 
 .blog-navigace {
@@ -1611,4 +1640,29 @@ label {
     flex-direction: column;
     /* border: 3px solid green; */
     /* align-items: center; */
+}
+
+.licence {
+    display:flex;
+    flex-direction:column;
+
+}
+
+.licence-radek {
+    display:flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items:flex-end;
+    /* border: 1px solid green; */
+}
+
+.licence-cena {
+    /* border: 1px solid red; */
+
+}
+
+.licence-bunka {
+    margin-right:5%;
+    /* border: 1px solid yellow; */
+
 }
