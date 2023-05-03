@@ -21,8 +21,33 @@ body {
 .stranka {
     margin-left:auto;
     margin-right:auto;
-    width:1100px;
 }
+
+/* POCITAC */
+@media (min-width:1100px){
+    .stranka {
+        width:1100px;
+    }
+}
+
+@media (min-width:900px) and (max-width:1099px){
+    .stranka {
+        width:900px;
+    }
+}
+
+/* TABLET */
+@media (min-width:700px) and (max-width:899px){
+    .stranka {
+        width:700px;
+    }
+
+}
+
+/* MOBIL */
+/* @media (max-width:699px){
+
+} */
 
 a {
     text-decoration: none;
@@ -44,6 +69,17 @@ header {
     align-items: flex-end;
     width:100%;
     /* border: 3px solid green; */
+}
+
+.menu-mobil {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    display:none;
+        /* border: 3px solid yellow; */
+
 }
 
 .menu-polozka {
@@ -72,6 +108,102 @@ header {
     font-weight:600;
 }
 
+/* hamburger menu */
+.navbar {
+    background-color:lightgrey;
+    width: 100%;
+    display: none;
+    text-transform: uppercase;
+  }
+
+  .navbar ul {
+    padding: 5%;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+  }
+
+  .navbar li {
+    display: block;
+    padding: 1% 1%;
+    /* width: 100%; */
+  }
+
+   .navbar li a {
+    color: #373737;
+    text-decoration: none;
+    /* transition: all .5s; */
+  }
+
+  .navbar li:hover {
+    cursor: pointer;
+    color:#B10D3E;
+  }
+
+  .hamburger {
+    position:absolute;
+    top:31px;
+    right: 30px;
+    /* margin-top: 30px; */
+    padding: 0;
+    transition: opacity .3s;
+    /* border: 2px solid red; */
+
+  }
+
+  .hamburger:hover {
+    cursor: pointer;
+    opacity: .5;
+  }
+
+  .hamburger .line{
+    width: 30px;
+    height: 2px;
+    margin: 9px auto;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+
+  .hamburger .line:nth-child(1) {
+    background-color: grey;
+  }
+
+  .hamburger .line:nth-child(2) {
+    background-color: lightgrey;
+  }
+
+  .hamburger .line:nth-child(3) {
+    background-color: grey;
+  }
+
+  .hamburger.isactive .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.isactive .line:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  .hamburger.isactive .line:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+
+  .navbar {
+    transition: all 2s ease-in-out;
+  }
+
+  .navbar.active {
+    display: block;
+    animation: fade .5s;
+  }
+
+  @keyframes fade {
+    from{transform: translateX(-200px); opacity: 0;}
+    to {transform: translateX(0px); opacity: 1;}
+  }
+
+
+
 .nadpis {
     flex-grow:3;
     height: 130px;
@@ -91,6 +223,8 @@ header {
     height: 400px;
     background-size: cover;
     background-position: center center;
+    margin-left:auto;
+    margin-right:auto;
     /* border: 3px solid blue; */
 }
 
@@ -102,7 +236,7 @@ header {
 footer {
     margin-top: 8%;
     width:100%;
-    background-color:#618D02;
+    /* background-color:#618D02; */
 }
 
 
@@ -116,6 +250,7 @@ footer {
 
 /* Texty */
 .zenazeme {
+    width: 220px;
     font-weight: 400;
     font-size: 45px;
     text-align: center;
@@ -124,6 +259,19 @@ footer {
     padding:0;
     color: #B10D3E;
     /* border: 3px solid violet; */
+}
+
+.petra {
+    font-style: Bold;
+    font-style: italic;
+
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    margin:5px;
+    padding:0;
+    /* border: 3px solid saddlebrown   ; */
 }
 
 b {
@@ -168,19 +316,6 @@ h5 {
     text-decoration: underline;
 }
 
-.petra {
-    font-style: Bold;
-    font-style: italic;
-
-    font-weight: 300;
-    font-size: 25px;
-    line-height: 35px;
-    text-align: center;
-    margin:5px;
-    padding:0;
-    /* border: 3px solid saddlebrown   ; */
-}
-
 .podtitul {
     font-size: 20px;
     font-style:italic;
@@ -212,11 +347,16 @@ h5 {
     /* border: 3px solid orange; */
 }
 
+.paticka {
+    font-size: 13px;
+}
+
 .patickapolozka {
     display:flex;
 	top:15px;
 	vertical-align: center;
-	color: white;
+    color:white;
+    background-color: #618D02;
 	padding:10px;
 
 }
@@ -319,7 +459,7 @@ section {
     /* font-weight: 600; */
     padding: 20px 0px 0px 0px;
     text-align: center;
-    
+
 
     /* border: 3px solid green; */
 
@@ -338,6 +478,10 @@ section {
     /* border: 3px solid green; */
 }
 
+.cd_zena_pred {
+    display:none;
+}
+
 .obrazek-index
  {
     flex-grow:1 1 auto;
@@ -345,7 +489,7 @@ section {
     height: 500px;
     background-size: cover;
     background-position: center center;
-    
+
     /* border: 3px solid orange; */
 }
 
@@ -375,6 +519,10 @@ section {
     /* border: 3px solid blue; */
 }
 
+.cd_nadpis {
+
+}
+
 .cd_popis {
     margin: 15px;
 }
@@ -388,6 +536,7 @@ section {
     margin: 20px;
     text-align: center;
     font-weight: 500;
+    align-self:center;
 }
 
 
@@ -400,6 +549,18 @@ section {
 .tlacitko-zelene {
     color: white;
     background-color: #618D02;
+    width:140px;
+    padding:6px 5px;
+    margin: 20px;
+    align-self: center;
+    text-align: center;
+    font-weight: 500;
+}
+
+.tlacitko-zelene:hover {
+    color: #618D02;
+    border: 1px solid #618D02;
+    background-color: white;
 }
 
 .reference {
@@ -435,7 +596,6 @@ section {
 .reference_karta {
     display:flex;
     /* border: 3px solid orange; */
-
     flex-wrap: wrap;
     flex-direction: column;
     margin:10px;
@@ -646,7 +806,6 @@ section {
 }
 
 .omne-text {
-    font-size: 18px;
     margin-right:10px;
 }
 
@@ -667,7 +826,7 @@ section {
     background-position: center center;
 
     /* border: 3px solid orange; */
-    
+
 }
 
 .blog-kurziva {
@@ -675,6 +834,16 @@ section {
     color:#B10D3E;
     font-style: italic;
     font-weight:600;
+}
+
+.blog-pozadi {
+    padding: 20px 10px;
+}
+
+.cely-clanek {
+    font-size: 11px;
+    padding-top: 10px;
+    text-decoration: underline;
 }
 
 .obr1 {
@@ -730,20 +899,28 @@ section {
 }
 
 .cara {
-    
+
         /* border: 3px solid orange; */
 
+}
+
+.blog-karta {
+            /* border: 3px solid red; */
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .blog-clanek {
     margin: 0 50px 0 50px;
     padding-top:20px;
-    
+
 }
 
-.blog-tlacitko {
-    padding-bottom: 30px;
-    /* border: 3px solid orange; */
+.blog-nadpis {
+
+            /* border: 3px solid orange; */
 
 }
 
@@ -756,6 +933,7 @@ section {
             /* border: 3px solid orange; */
 
 }
+
 
 .blog-obr-sirka{
     width: 450px;
@@ -791,6 +969,8 @@ section {
     font-style: italic;
     color:#B10D3E;
     text-align:center;
+    margin:0;
+    flex-grow:3;
 }
 
 .blog {
@@ -801,7 +981,19 @@ section {
 }
 
 .blog-text {
-    margin:4%;
+    flex-grow:3.5;
+    padding:0 10px;
+    /* border: 3px solid orange; */
+
+
+}
+
+.blog-tlacitko {
+    /* border: 3px solid green; */
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    vertical-align: bottom;
 }
 
 .posledni {
@@ -811,15 +1003,9 @@ section {
 }
 
 .odkaz{
-    font-size:20px;
     color:#B10D3E;
     font-weight: 500;
     text-decoration: underline;
-}
-
-.popis-vetsi {
-    font-size:18px;
-
 }
 
 /* O MNE */
@@ -841,7 +1027,6 @@ section {
 }
 
 .sekce_popis {
-    font-size: 18px;
     margin-top:30px;
     margin-left:30px;
     margin-right:30px;
@@ -850,7 +1035,6 @@ section {
 }
 
 .sekce_popis_bez_nadpisu {
-    font-size: 18px;
     margin-left:30px;
     margin-right:30px;
     /* border: 3px solid blue; */
@@ -929,7 +1113,7 @@ section {
     background-size: cover;
     background-position: center center;
     margin:20px;
- 
+
     /* border: 3px solid orange; */
 }
 
@@ -946,7 +1130,7 @@ section {
     background-position:top;
 }
 
-/* Tipy na fonty: Krimson (old school, uzemeni), Lora (zenske), Amiri (jemne, soucitne), Spectral (specialni, krasna kurziva, pusobi jako osobnost), Una (kurzíva krásná, ženská - tučným kdyby byly nadpisy, tak by to mohlo vypadat dobře), DM Serif text (krásná kurzíva s linkami)  
+/* Tipy na fonty: Krimson (old school, uzemeni), Lora (zenske), Amiri (jemne, soucitne), Spectral (specialni, krasna kurziva, pusobi jako osobnost), Una (kurzíva krásná, ženská - tučným kdyby byly nadpisy, tak by to mohlo vypadat dobře), DM Serif text (krásná kurzíva s linkami)
 Ilustrace: pepeta.cz
 Pro Julku: Italiano*/
 
@@ -981,12 +1165,15 @@ Pro Julku: Italiano*/
     margin: 10px 20px;
     display:flex;
     flex-wrap: wrap;
-    align-items:center;
+    align-items:baseline;
         /* border: 3px solid green; */
 
 }
 .pisnicka-text-pokus {
     display: flex;
+            /* border: 1px solid #618D02; */
+    align-items: center;
+
 }
 
 .text-audio {
@@ -1063,7 +1250,7 @@ Pro Julku: Italiano*/
     background-image: url("pic/obrady.png");
 }
 .foto-nove {
-    background-image: url("pic/kalimba.png");
+    background-image: url("pic/nove.png");
 }
 .foto-menstruace {
     background-image: url("pic/menstruace.png");
@@ -1104,7 +1291,6 @@ Pro Julku: Italiano*/
 .doprovazim_popis {
     color:#373737;
     text-align:left;
-    font-size: large;
         /* border: 2px solid #618D02; */
 
 }
@@ -1128,7 +1314,6 @@ ul {
 
 .seznam {
     margin: 20px 30px 30px 30px;
-    font-size: 18px;
     line-height: 2;
         /* border: 2px solid #618D02; */
 
@@ -1189,7 +1374,6 @@ ul {
 }
 
 .ritual-text {
-    font-size:18px;
     margin: 30px 80px 0 80px;
 }
 
@@ -1199,7 +1383,7 @@ ul {
     color:#618D02;
 }
 .zelene-2 {
-    
+
     font-weight: 800;
     color:#618D02;
 }
@@ -1275,7 +1459,6 @@ ul {
 }
 
 .ritual-nadpis {
-    font-size: 18px;
     font-weight: 900;
     text-transform: uppercase;
     color:#B10D3E;
@@ -1301,6 +1484,10 @@ ul {
     margin: 0 30px;
 }
 
+.cviceni-druhe {
+    margin: 0 30px;
+}
+
 .zelene-velke {
     font-size: 20px;
     color:#618D02;
@@ -1311,7 +1498,6 @@ ul {
 }
 
 .cviceni-popis {
-    font-size: 16px;
     margin: 20px 20px;
     text-align: center;
 }
@@ -1356,7 +1542,7 @@ ul {
     display:flex;
     justify-content:space-evenly;
     flex-wrap: wrap;
-    align-items:center;
+    align-items:baseline;
         /* border: 3px solid green; */
 
 }
@@ -1387,7 +1573,7 @@ ul {
 }
 
 .hudba_obr {
-    
+
     background-size: cover;
     background-position: center center;
     margin:5px;
@@ -1396,7 +1582,7 @@ ul {
     /* border-radius: 60%; */
     /* border: 2px solid #618D02; */
     color: #EFECEC;
-    
+
     /* filter: brightness(70%); */
 }
 
@@ -1433,7 +1619,6 @@ ul {
     display:flex;
     flex-direction: column;
     margin: 0 30px 30px 30px;
-    font-size: 18px;
     line-height: 2;
         /* border: 2px solid #618D02; */
 
@@ -1515,7 +1700,7 @@ ul {
 
 .videa {
     display: flex;
-    
+
 }
 
 .jedno_video {
@@ -1622,6 +1807,7 @@ ul {
     font-style: italic;
     font-size: large;
     font-weight: 500;
+    padding-top:10px;
  }
 
 .popisek-pisne {
@@ -1664,5 +1850,370 @@ label {
 .licence-bunka {
     margin-right:5%;
     /* border: 1px solid yellow; */
+
+}
+
+
+/* POCITAC */
+@media (min-width:1100px){
+
+}
+
+/* cokoliv mensi nez pocitac */
+@media (max-width:1099px){
+    .cd {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .cd_obrazek {
+        width:100%;
+        align-self: center;
+        /* margin: 5% 5%; */
+        /* border: 3px solid green; */
+    }
+
+    .obrazek_cd {
+        width: 500px;
+        margin-left:auto;
+        margin-right:auto;
+        /* border: 3px solid red; */
+
+    }
+
+    .cd_zena_pred {
+        display:block;
+    }
+
+    .cd_zena_za {
+        display:none;
+    }
+
+    .cd_text {
+        /* border: 3px solid blue; */
+        flex-basis:100%;
+
+    }
+
+    .cd_nadpis{
+        text-align:center;
+
+    }
+
+    .cd_uvod {
+        text-align:center;
+        /* border: 3px solid blue; */
+    }
+
+    /* UVODNIKY */
+    /* O MNE */
+    .sekce_obrazek {
+        width:auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+/* TABLET */
+@media (max-width:899px){
+  
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size:30px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    .text_zuzeny {
+        padding-right:30px;
+        padding-left:30px;
+    }
+
+    .zenazeme {
+        width: 180px;
+        font-size: 35px;
+        height: 40px;
+
+    }
+
+    .menu {
+        flex: 0 1 auto;
+        font-size: 13px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        width:100%;
+        /* border: 3px solid green; */
+    }
+
+    .menu-polozka {
+        flex-grow:1;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
+        text-align: center;
+        padding: 20px 5px;
+        width:100px;
+        text-transform: uppercase;
+        /* border: 1px solid red; */
+        color: #000000;
+    }
+
+
+    .motto {
+        position: absolute;
+        width: 190px;
+        height: 128px;
+        left: 3%;
+        top: 15%;
+
+        font-size: 25px;
+        line-height: 25px;
+
+        color: #FFFFFF;
+    }
+
+    /* OZVENY */
+    .reference {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reference_karta {
+        width: 80%;
+    }
+
+    .reference_karta_1 {
+        width: 80%;
+    }
+
+    .reference_karta_max {
+        width: 80%;
+        margin:0;
+    }
+
+    /* O MNE */
+    .omne {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kdo_jsem {
+        text-align:center;
+    }
+
+    /* UVODNIKY */
+    /* O MNE */
+    .sekce {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kdo_jsem {
+        text-align:center;
+    }
+
+    .sekce_popis {
+        width:90%;
+        font-size: 16px;
+        /* border: 3px solid blue; */
+    
+    }
+
+    .videa {
+        flex-direction: column;
+    }
+
+    .nastroje {
+        flex-direction: column;
+        text-align: left;
+        /* border: 3px solid blue; */
+        margin:auto;
+        width:80%;
+    }
+
+    .cviceni-tabulka {
+        flex-direction:column;
+    }
+
+    .cviceni-jak {
+        margin: 3%;
+    }
+
+    .cviceni-uvod {
+        flex-direction:column;
+    }
+
+    .blog-obr {
+        float:none;
+        clear:both;
+        margin:0 25%;
+    }
+
+    .blog-clanek h2 {
+        text-align:center;
+    }
+
+    .skladby_sloupec {
+        font-size:18px;
+        flex-basis: 40%;
+        display:block;
+        margin:0 auto;
+        /* border: 3px solid blue; */
+
+    }
+
+    .skladby_seznam {
+        justify-content:center;
+                /* border: 3px solid blue; */
+
+    }
+
+    .cd_popisek {
+        width: 100%;
+        /* border: 3px solid blue; */
+    }
+
+    .cd_obrazek {
+        display:block;
+        width:100%;
+        /* border: 3px solid blue; */
+
+    }
+
+    .obrazek-cd {
+        /* border: 3px solid red; */
+        display:block;
+        margin:0 auto;
+    }
+
+    .cd-nadpis {
+        text-align: center;
+        
+    }
+
+    .cd-vznik {
+        margin:0 20px;
+        display:flex;
+    }
+
+    .cd-kratke {
+        flex-basis:40%;
+        /* border: 3px solid red; */
+    }
+    
+    .popisek-pisne {
+        visibility:hidden;
+    }
+
+    .grid {
+        grid-template-columns: 30px 0.85fr 1.5fr 0.2fr;
+        margin:3% 4%;
+    }
+
+    .grid-prvni {
+        grid-template-columns: 1fr;
+        margin:3% 4%;
+        /* border: 3px solid red; */
+
+    }
+
+    .grid-druhy {
+        grid-template-columns: 1fr 1.5fr 0.1fr;
+        margin:3% 4%;
+    }
+
+    p {
+        margin:0 4%;
+    }
+    .nazev-pisne {
+        margin:0 4%;
+    }
+
+    .tlacitka-cd {
+        justify-content: center;
+            /* border: 3px solid blue; */
+    }
+
+    .podnavigace {
+        margin-bottom: 20px;
+    }
+}
+
+/* MOBIL */
+@media (max-width:699px){
+
+
+    /* zahlavi */
+    .zenazeme {
+        width: 100%;
+        font-size: 35px;
+        height: 40px;
+
+    }
+
+    body {
+        font-size: 17px;    
+    }
+
+    .menu {
+        display:none;
+    }
+    .menu-mobil {
+        display:block;
+    }
+
+    .motto {
+        display:none;
+    }
+
+    /* ZRUSENI OBRAZKU U DOPROVAZIM */
+    .obr-chlivek {
+        display:none;
+    }
+
+    .reference_karta {
+        width: 90%;
+    }
+
+    .reference_karta_1 {
+        width: 90%;
+    }
+
+    .reference_karta_max {
+        width: 90%;
+    }
+
+    .odsazene-zboku {
+        margin-left:20px;
+        margin-right:20px;
+    }
+
+    .info-ritual {
+        flex-direction: column;
+    }
+
+    .blog-obr {
+       
+        margin:0 20%;
+    }
+
+    .cd-vznik {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width:500px){
+    .obrazek-index {
+        width:400px;
+        height:400px;
+    }
+
 
 }
